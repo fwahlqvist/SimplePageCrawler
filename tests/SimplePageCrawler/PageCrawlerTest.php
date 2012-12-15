@@ -28,5 +28,7 @@ class PageCrawlerTest extends TestCase
         );
         $this->assertTrue(in_array('Zend - The PHP Company', $response->getH1()));
         $this->assertTrue(in_array('http://static.zend.com/img/newfp/twitter_icon.png', $response->getImages()->getArrayCopy()));
+        $this->assertTrue(in_array('/fr/user/logout', $response->getLinks()->getArrayCopy()));
+        $this->assertFalse(in_array('#', $response->getLinks()->getArrayCopy()));
     }
 }

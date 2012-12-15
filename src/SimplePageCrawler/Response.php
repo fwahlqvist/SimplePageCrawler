@@ -32,12 +32,18 @@ class Response extends AbstractOptions
      */
     protected $headingTags;
 
+    /**
+     * @var ArrayObject
+     */
+    protected $links;
+
     public function __construct($options = null)
     {
         parent::__construct($options);
         $this->meta = new ArrayObject();
         $this->images = new ArrayObject();
         $this->headingTags = new ArrayObject();
+        $this->links = new ArrayObject();
     }
 
     public function getTitle()
@@ -110,5 +116,16 @@ class Response extends AbstractOptions
     public function getH5()
     {
         return $this->headingTags['h5'];
+    }
+
+    public function getLinks()
+    {
+        return $this->links;
+    }
+
+    public function setLinks(array $links)
+    {
+        $this->links->exchangeArray($links);
+        return $this;
     }
 }

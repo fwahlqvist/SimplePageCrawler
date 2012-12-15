@@ -1,7 +1,7 @@
 ZF2 SimplePageCrawler module
 ===================
 
-Version 0.1 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
+Version 0.2 Created by [Vincent Blanchon](http://developpeur-zend-framework.fr/)
 
 Introduction
 ------------
@@ -13,7 +13,7 @@ You can get informations :
 * Meta (decsription, etc.)
 * H1, H2, etc.
 * List of the images
-* Weight of the page
+* List of the links
 
 Usage
 ------------

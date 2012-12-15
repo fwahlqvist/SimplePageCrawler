@@ -38,7 +38,7 @@ class PageCrawler
         $httpClient->setUri($uri);
         $source = $httpClient->send();
 
-        $response = PageParser::fromPageSource($source->getBody());
+        $response = PageParser::fromPageSource($source->getBody(), $uri);
         return $response;
     }
 

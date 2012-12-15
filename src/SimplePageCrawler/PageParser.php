@@ -75,6 +75,23 @@ class PageParser
         }
         $response->images = array_unique($img);
 
+        $links = array();
+        $nodes = $domQuery->queryXpath('//a');
+        foreach($nodes as $node) {
+            if(!$node->hasAttribute('href')) {
+                continue;
+            }
+            $href = $node->getAttribute('href');
+            if(
+                preg_match('/^#/', $href) ||
+                preg_match('/^javascript/', $href)
+            ) {
+                continue;
+            }
+            $links[] = $href;
+        }
+        $response->links = array_unique($links);
+
         return $response;
     }
 }
